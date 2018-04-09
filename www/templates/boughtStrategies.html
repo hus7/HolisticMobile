@@ -1,0 +1,14 @@
+<ion-view>
+    <ion-content class="padding-top has-header">
+        <ion-list>
+            <!-- <ion-item class="item item-icon-right" ng-repeat="strategy in strategies">
+                {{strategy.title}}
+                <i class="icon ion-android-remove-circle" style="color: red" ng-click="updateStrategies($index)"></i>
+            </ion-item> -->
+            <ion-item class="item item-icon-right" ng-repeat="strategy in newBoughtStrategies">
+                {{strategy}}
+                <i class="icon ion-android-remove-circle" style="color: red" ng-click="updateStrategies($index)"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view>
+    <ion-content class="has-header padding-top">
+        <ion-list show-delete="true">
+            <ion-item ng-repeat="action in consultantActions">
+                <div ng-if="action.money">
+                    <h2>{{action.company}}</h2>
+                    <ul class="row" id="resources">
+                        <li><img ng-src="img/personal.png"></li>
+                        <li>
+                            <p>{{action.personnel}}</p>
+                        </li>
+                        <li><img ng-src="img/capital.png"></li>
+                        <li>
+                            <p>{{action.money}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div ng-if="!action.money">
+                    <p ng-if="action.department !== 'NULL'">{{action.department}}</p>
+                    <p>{{action.subject}} : {{action.message}}</p>
+                    <ion-delete-button side="right" class="ion-minus-circled" ng-click="deleteActions($index)">
+                    </ion-delete-button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

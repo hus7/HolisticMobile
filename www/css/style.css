@@ -1,0 +1,174 @@
+/* Empty. Add your own CSS if you like */
+div.spinner {
+    position: absolute;
+    top: 70%; left: 0; bottom: 0; right: 0;
+    text-align: center;
+}
+.spinner svg {
+    width: 25% !important;
+    height: 25% !important;
+    fill: #000;
+    stroke: #000;
+}
+div.bottom {
+    position: absolute;
+    top: 70%; left: 0; bottom: 0; right: 0;
+    text-align: center;
+}
+.loading-view{
+    background-image: url("../img/splash.png");
+    -webkit-background-size: cover;
+    -moz-background-size: center cover;
+    background-size: cover;
+    background-position: center top;
+}
+.balanceSheetRound_image {
+    background: url("../img/phaseBackground.png");
+    background-position: center center;
+    margin: auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.balanceSheetRound_background {
+    background-color: #848284 !important;
+}
+.bar {
+     background-image: none !important;
+     border: 1px;
+}
+.button-full {
+    border: 0 !important;
+    outline: none !important;
+}
+.pane {
+  background-color:  #FAFAFA;
+}
+.notificationPopup .popup{
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(22, 22, 22, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(22, 22, 22, 1);
+    box-shadow: 0px 0px 24px -1px rgba(22, 22, 22, 1);
+}
+.notificationPopup .popup-body {
+    background-color: #444444;
+    color:#FAFAFA;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+.notificationPopup .popup-head {
+    display: none;
+}
+.card-handled-popup {
+    text-align: center;
+}
+.popup-no-title .popup-head {
+    display: none;
+}
+.title-image {
+    display: inline-block;
+    height: 30px;
+    font-size: 30px;
+    vertical-align: middle;
+}
+.icon.bought {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 70%;
+  background-image: url('../img/dot_black.png');
+  background-size:contain;
+}
+.icon.implemented {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 70%;
+  background-image: url('../img/dot_yellow.png');
+  background-size:contain;
+}
+.icon.active {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 70%;
+  background-image: url('../img/dot_green.png');
+  background-size:contain;
+}
+.icon.notactive {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 70%;
+  background-image: url('../img/dot_red.png');
+  background-size:contain;
+}
+.icon.allStrategies {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 70%;
+  background-image: url('../img/allStrategies.png');
+  background-size:contain;
+}
+.changed {
+    font-weight: bold;
+}
+.ion-item-no-research{
+    opacity: .4;
+}
+.ion-checkmark-green{
+    color : green;
+}
+#resources > li {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+}
+#resources > li > p {
+    font-size: 3em;
+}
+#resources > li > img {
+    height: 3em;
+    width: auto;
+    vertical-align: middle;
+}
+textarea {
+    height:auto;
+    width:100%;
+    line-height:2em;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+}
+.mail-unseen {
+    font-weight: bold;
+}
+
+.center{
+  text-align: center !important;
+}
+
+.margin{
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.padding-top{
+  padding-top: 18px !important;
+}
+
+.progress-bar{
+  background-color: #ddd !important;
+  border-radius:100px;
+  height:20px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.loader{
+  border-radius:100px;
+  height:20px;
+}

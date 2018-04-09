@@ -1,0 +1,30 @@
+<script id="researchModal.html" type="text/ng-template">
+  <ion-modal-view style="width: 100%; height: 100%; top:88px; left: 0; right: 0; bottom: 0;">
+    <ion-header-bar align-title="center">
+      <h1 class="title">{{"researchOptions" | translate }}</h1>
+    </ion-header-bar>
+    <ion-content class="padding-top">
+        <button class="button button-dark button-full" ng-click="roll()">{{"roll" | translate }}</button>
+        <button class="button button-dark button-full" ng-click="researchSuccessful()">{{"researchSuccessfulButton" | translate }}</button>
+        <button class="button button-dark button-full" ng-click="researchNotSuccessful()">{{"researchNotSuccessfulButton" | translate }}</button>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<ion-view>
+    <div class="bar bar-assertive bar-subheader">
+        <h2 class="title">{{department.name}}</h2>
+    </div>
+    <ion-content class="has-header has-subheader padding-top">
+        <ion-list>
+            <div class="item item-divider">
+                {{"researchTopics" | translate}}
+            </div>
+            <ion-item ng-repeat="topic in researchTopics" ng-class="topic.enoughMoneyToResearch === 'false' && topic.finished === 'false' ? 'ion-item-no-research' : ''"
+                ng-click="research(topic)">
+                {{topic.title}}({{topic.complexity}} {{"complexity" | translate }})
+                <span class="item-note"><i ng-if="topic.finished === 'true'" class="icon ion-checkmark ion-checkmark-green"></i></span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

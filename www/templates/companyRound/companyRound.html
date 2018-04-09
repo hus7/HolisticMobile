@@ -1,0 +1,30 @@
+<ion-view>
+    <div class="bar bar-assertive bar-subheader" style="margin:{{ isAndroid ? 0 : 20 }}px auto 0;">
+        <h2 class="title">{{"roundTwoName" | translate}}</h2>
+    </div>
+    <ion-content class="has-header has-subheader padding-top">
+        <ul class="row" id="resources">
+            <li><img ng-src="img/personal.png"></li>
+            <li>
+                <p>{{departmentResources.personnel}}</p>
+            </li>
+            <li><img ng-src="img/capital.png"></li>
+            <li>
+                <p>{{departmentResources.money}}</p>
+            </li>
+        </ul>
+        <div ng-if="!!date" style="text-align:center; margin: 10px auto; font-size:30px">{{('0' + date.getMinutes()).slice(-2)}}:{{('0' + date.getSeconds()).slice(-2)}}</div>
+
+        <button class="button button-block button-calm icon-left ion-pie-graph" ng-click="showChangedStrategies()">{{ "changedStrategies" | translate}}</button>
+        <button class="button button-block button-positive icon-left ion-cash" ng-click="registerAsResourceManager()">{{ "registerResourceManager" | translate}}</button>
+        <button class="button button-block button-positive icon-left ion-person-stalker" ng-click="registerAsExpertDistributor()">{{ "registerExpertDistributor" | translate}}</button>
+        <button class="button button-block button-energized icon-left ion-android-time" ng-click="registerAsTimeManager()">{{ "registerTimeManager" | translate}}</button>
+        <button class="button button-block button-balanced icon-left ion-compose" ng-click="registerAsSecretary()">{{ "registerSecretary" | translate}}</button>
+
+        <!--  <button class="button button-dark button-full" ng-click="showChangedStrategies()">{{ "changedStrategies" | translate}}</button>
+        <button class="button button-dark button-full" ng-click="registerAsResourceManager()">{{ "registerResourceManager" | translate}}</button>
+        <button class="button button-dark button-full" ng-click="registerAsExpertDistributor()">{{ "registerExpertDistributor" | translate}}</button>
+        <button ng-disabled="!!date" class="button button-dark button-full" ng-click="registerAsTimeManager()">{{ "registerTimeManager" | translate}}</button>
+        <button class="button button-dark button-full" ng-click="registerAsSecretary()">{{ "registerSecretary" | translate}}</button> -->
+    </ion-content>
+</ion-view>

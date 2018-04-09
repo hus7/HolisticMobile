@@ -1,0 +1,37 @@
+<ion-view>
+    <ion-pane>
+        <ion-content class="has-header padding-top">
+            <ion-list>
+                <div class="item item-divider">
+                    {{"competenceValues" | translate}}
+                </div>
+                <ion-item>
+                    {{"ecologicCompetence" | translate}}<span class="badge" ng-style="{'background-color': '#074C07', 'color' : '#FFFFFF'}">{{summedEcologicCompetence}}/9</span>
+                        <div class="progress-bar">
+                            <div class="loader" style="width: {{ecologicProgressPercent}}%; background-color: #074C07"></div>
+                            <!-- <p class="percent">{{progressPercent}}%</p> -->
+                        </div>
+                 </ion-item>
+
+                <ion-item>
+                    {{"economicCompetence" | translate}}<span class="badge" ng-style="{'background-color': '#AA4C4C', 'color' : '#FFFFFF'}">{{summedEconomicCompetence}}/9</span>
+                    <div class="progress-bar">
+                            <div class="loader" style="width: {{economicProgressPercent}}%; background-color: #AA4C4C"></div>
+                        </div>
+                </ion-item>
+                <ion-item>
+                    {{"networkCompetence" | translate}}<span class="badge" ng-style="{'background-color': '#005282', 'color' : '#FFFFFF'}">{{summedNetworkCompetence}}/9</span>
+                    <div class="progress-bar">
+                            <div class="loader" style="width: {{networkProgressPercent}}%; background-color: #005282"></div>
+                        </div>
+                </ion-item>
+                <div class="item item-divider">
+                    {{"competenceCards" | translate}}
+                </div>
+                <ion-item ng-repeat="card in competenceCards" ng-click="showCompetenceCard(card)" class="item-icon-right">
+                    {{card.title}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-pane>
+</ion-view>

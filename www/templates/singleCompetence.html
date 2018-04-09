@@ -1,0 +1,11 @@
+<ion-view>
+    <div class="bar bar-assertive bar-subheader" style="margin:{{ isAndroid ? 0 : 20 }}px auto 5px;">
+        <h2 class="title">{{competenceCard.title}}</h2>
+    </div>
+    <ion-content class="has-header has-subheader padding-top">
+        <p>{{competenceCard.description}}</p>
+    </ion-content>
+    <ion-footer-bar class="bar bar-dark">
+        <button class="button" ng-click="sellCompetence()">{{"sell" | translate}}</button>
+    </ion-footer-bar>
+</ion-view>

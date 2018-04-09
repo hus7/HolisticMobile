@@ -1,0 +1,59 @@
+<ion-view>
+    <ion-pane>
+        <ion-tabs class="tabs-assertive tabs-icon-bottom">
+            <ion-tab title="{{ 'overview' | translate }}" on-select="updateTab()" icon="allStrategies">
+                <ion-nav-view name="allStrategies">
+                    <ion-content class="has-header padding-top">
+                        <nvd3 options="options" data="data" api="api"></nvd3>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+            <ion-tab ng-if="onlyActiveAndNotActive == 'false'" title="{{ 'bought' | translate }}" icon="bought">
+                <ion-nav-view name="bought">
+                    <ion-content class="has-header padding-top">
+                        <ion-list>
+                            <ion-item ng-repeat="card in strategyCards | filter: {state: 'BOUGHT'} : true" ng-click="showCard(card)" ng-class="(card.changed=='true') ? 'changed' : ''">
+                                {{card.title}}
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+            <ion-tab ng-if="onlyActiveAndNotActive == 'false'" title="{{ 'implemented' | translate }}" icon="implemented">
+                <ion-nav-view name="implemented">
+                    <ion-content class="has-header padding-top">
+                        <ion-list>
+                            <ion-item ng-repeat="card in strategyCards | filter: {state: 'IMPLEMENTED'} : true" ng-click="showCard(card)" ng-class="(card.changed=='true') ? 'changed' : ''">
+                                {{card.title}}
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="{{ 'active' | translate }}" icon="active">
+                <ion-nav-view name="active">
+                    <ion-content class="has-header padding-top">
+                        <ion-list>
+                            <ion-item ng-repeat="card in strategyCards | filter: {state: 'ACTIVE'} : true" ng-click="showCard(card)" ng-class="(card.changed=='true') ? 'changed' : ''">
+                                {{card.title}}
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="{{ 'notActive' | translate }}" icon="notactive">
+                <ion-nav-view name="notactive">
+                    <ion-content class="has-header padding-top">
+                        <ion-list>
+                            <ion-item ng-repeat="card in strategyCards | filter: {state: 'NOT_ACTIVE'} : true" ng-click="showCard(card)" ng-class="(card.changed=='true') ? 'changed' : ''">
+                                {{card.title}}
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+    </ion-pane>
+</ion-view>

@@ -1,0 +1,11 @@
+<ion-view>
+    <div class="bar bar-assertive bar-subheader" style="margin:{{ isAndroid ? 0 : 20 }}px auto 5px;">
+        <h2 class="title">{{"roundThreeName" | translate}}</h2>
+    </div>
+    <ion-content class="has-header has-subheader padding-top" style="margin:{{ isAndroid ? 0 : 20 }}px auto 0;">
+
+        <button class="button button-block button-positive icon-left ion-stats-bars" ui-sref="app.companyValues">{{ "companyValues" | translate}}</button>
+        <button class="button button-block button-energized icon-left ion-document-text" ng-click="getStrategyInfo()">{{ "strategyInfo" | translate}}</button>
+    <!-- ui-sref="app.strategyInfo" -->
+    </ion-content>
+</ion-view>

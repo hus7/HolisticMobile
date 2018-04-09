@@ -1,0 +1,7 @@
+<ion-view>
+    <ion-content class="has-header padding-top">
+        <ion-label stacked>{{"companyStrategy" | translate}}</ion-label>
+        <textarea rows=10 ng-model="companyStrategy.text"></textarea>
+        <button class="button button-dark button-full" ng-click="secretary.submitCompanyStrategy(companyStrategy.text)">{{"save" | translate}}</button>
+    </ion-content>
+</ion-view>

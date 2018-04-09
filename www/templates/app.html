@@ -1,0 +1,55 @@
+<ion-side-menus>
+    <ion-side-menu-content>
+        <ion-nav-bar align-title="center" class="bar bar-assertive bar-header">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-title>
+                <span ng-if="companyName!==undefined ">{{companyName}} - {{departmentAbbreviation}}</span>
+            </ion-nav-title>
+            <ion-nav-buttons side="right">
+                <button ng-if="!new_mail && !hide_mail_icon " class="button button-icon icon ion-email " ng-click="showMails() "></button>
+                <button ng-if="new_mail && !hide_mail_icon " class="button button-icon icon ion-email-unread " ng-click="showMails() "></button> 
+            </ion-nav-buttons>
+            <ion-nav-buttons side="left">
+                <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+            </ion-nav-buttons> 
+        </ion-nav-bar>
+        <ion-nav-view name="appContent" class="slide-left-right "></ion-nav-view>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left" width="200">
+        <header class="bar bar-assertive bar-header">
+            <h1 class="title">{{"options" | translate}}</h1>
+        </header>
+        <ion-content class="has-header">
+            <ion-list ng-if="!menu_loading">
+                <ion-item ng-click="selectNewDepartment()">
+                    {{"selectNewDepartment" | translate}}
+                </ion-item>
+                <ion-item ng-click="switchToConsultant()">
+                    {{"switchToConsultant" | translate}}
+                </ion-item>
+                <ion-item class="item item-input item-select">
+                    {{"language" | translate}}
+                    <select ng-model="data.lang" ng-change="changeLang()">
+                      <option selected value="de">DE</option>
+                      <option value="en">EN</option>
+                    </select>
+                </ion-item>
+            </ion-list>
+            <ion-list ng-if="menu_loading">
+                <ion-item ng-click="connectManual()">
+                    {{"connectManual" | translate}}
+                </ion-item>
+                <ion-item class="item item-input item-select">
+                    {{"language" | translate}}
+                    <select ng-model="data.lang" ng-change="changeLang()">
+                      <option selected value="de">DE</option>
+                      <option value="en">EN</option>
+                    </select>
+                </ion-item>
+            </ion-list>
+        </ion-content>        
+    </ion-side-menu>
+</ion-side-menus>

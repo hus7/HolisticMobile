@@ -1,0 +1,16 @@
+<ion-view>
+    <ion-content class="has-header padding-top">       
+        <ion-list ng-repeat="expert in experts">
+            <ul class="row">
+                <pre translate="expert.{{expert.type}}"></pre>
+            </ul>
+            <ul class="row">
+                <ion-radio ng-style="{'width':'50%'}" icon="" ng-repeat="abbrev in departmentAbbreviations |limitTo:2" ng-model="expert.department" ng-value="$index.toString()" name="{{expert.type}}" >{{abbrev}}</ion-radio>
+            </ul>
+            <ul class="row">
+                <ion-radio ng-style="{'width':'50%'}" icon="" ng-repeat="abbrev in departmentAbbreviations |limitTo:-2" ng-model="expert.department" ng-value="($index + 2).toString()" name="{{expert.type}}" >{{abbrev}}</ion-radio>
+            </ul>
+        </ion-list>
+        <button class="button button-dark button-full" ng-click="expertDistributor.submitExpertDistribution(experts)">{{"save" | translate}}</button>
+    </ion-content>
+</ion-view>

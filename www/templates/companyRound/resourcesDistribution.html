@@ -1,0 +1,38 @@
+<ion-view>
+    <ion-content class="has-header padding-top">
+        <ul class="row" id="resources">
+            <li><img ng-src="img/personal.png"></li>
+            <li>
+                <p>{{companyResources.personnel}}</p>
+            </li>
+            <li><img ng-src="img/capital.png"></li>
+            <li>
+                <p>{{companyResources.money}}</p>
+            </li>
+        </ul>
+        <ion-list>
+            <ion-item ng-repeat="department in departments">
+                <ul class="row" id="resources">
+                    <div style="font-size:20px">{{department.name}}</div>
+                </ul>
+                <ul class="row" id="resources">
+                    <button class="button icon ion-minus" on-hold="startDecreasePersonnel($index)" on-release="stopIncreaseOrDecrease()" ng-click="decreasePersonnel($index)"></button>
+                    <li><img ng-src="img/personal.png"></li>
+                    <li>
+                        <p>{{department.personnel}}</p>
+                    </li>
+                    <button class="button icon ion-plus" on-hold="startIncreasePersonnel($index)" on-release="stopIncreaseOrDecrease()" ng-click="increasePersonnel($index)"></button>
+                </ul>
+                <ul class="row" id="resources">
+                    <button class="button icon ion-minus" on-hold="startDecreaseMoney($index)" on-release="stopIncreaseOrDecrease()" ng-click="decreaseMoney($index)"></button>
+                    <li><img ng-src="img/capital.png"></li>
+                    <li>
+                        <p>{{department.money}}</p>
+                    </li>
+                    <button class="button icon ion-plus" on-hold="startIncreaseMoney($index)" on-release="stopIncreaseOrDecrease()" ng-click="increaseMoney($index)"></button>
+                </ul>
+            </ion-item>
+        </ion-list>
+        <button class="button button-dark button-full" ng-click="resourceManager.submitResources(departments)">{{"save" | translate}}</button>
+    </ion-content>
+</ion-view>

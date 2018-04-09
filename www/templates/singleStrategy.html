@@ -1,0 +1,100 @@
+<ion-view>
+    <div class="bar bar-assertive bar-subheader"  style="margin:{{ isAndroid ? 0 : 20 }}px auto 5px;">
+        <h2 class="title">{{strategyCard.title}}</h2>
+    </div>
+    <ion-content class="has-header has-subheader padding-top">
+        <ul class="row" id="resources">
+            <li><img ng-src="img/personal.png"></li>
+            <li>
+                <p>{{strategyCard.personnel}}</p>
+            </li>
+            <li><img ng-src="img/capital.png"></li>
+            <li>
+                <p>{{strategyCard.cost}}</p>
+            </li>
+        </ul>
+        <ion-list>
+            <ion-card class="item-text-wrap">
+                <ion-card-header class="h5 item item-divider">
+                    {{"description" | translate}}
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item>{{strategyCard.description}}</ion-item>
+                </ion-card-content>
+            </ion-card>
+            <ion-card class="item-text-wrap">
+                <ion-card-header class="h5 item item-divider">
+                    {{"advantages" | translate}}
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item>{{strategyCard.advantages}}</ion-item>
+                </ion-card-content>
+            </ion-card>
+            <ion-card class="item-text-wrap">
+                <ion-card-header class="h5 item item-divider">
+                    {{"disadvantages" | translate}}
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item>{{strategyCard.disadvantages}}</ion-item>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card ng-if="internalDependencies!==undefined || externalDependencies!==undefined" class="item-text-wrap">
+                <ion-card-header class="h5 item item-divider">
+                    {{"dependencies" | translate}}
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item ng-if="internalDependencies.length>0" ng-repeat="(group,mincount) in internalGroups">
+                    <div ng-repeat="strategy in internalDependencies | filter : { groupno : group } : true">
+                        <p ng-show="!$last && $index==0">{{mincount}} {{"outOf" | translate}}</p>
+                        <ion-item>{{strategy.title}}</ion-item>
+                    </div>
+                    </ion-item>
+                    <ion-item ng-if="externalDependencies.length>0" ng-repeat="(group,mincount) in externalGroups">
+                        <div ng-repeat="strategy in externalDependencies | filter : { groupno : group } : true">
+                            <p ng-show="!$last && $index==0">{{mincount}} {{"outOf" | translate}}</p>
+                            <ion-item>{{strategy.department}}: {{strategy.title}}</ion-item>
+                        </div>
+                    </ion-item>
+                    <ion-item ng-if="!externalDependencies.length>0 && !internalDependencies.length>0">{{"noDependencies" | translate}}</ion-item>
+                </ion-card-content>
+            </ion-card>
+
+            <!-- <ion-card ng-if="internalDependencies!==undefined" class="item-text-wrap">
+                <ion-card-header>
+                    {{"internalDependencies" | translate}}
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item ng-if="internalDependencies.length>0" ng-repeat="(group,mincount) in internalGroups">
+                    <div ng-repeat="strategy in internalDependencies | filter : { groupno : group } : true">
+                        <p ng-hide="!$last && $index==0">{{mincount}} {{"outOf" | translate}}</p>
+                        <ion-item>{{strategy.title}}</ion-item>
+                    </div>
+                    </ion-item>
+                    <ion-item ng-if="!internalDependencies.length>0">{{"noDependencies" | translate}}</ion-item>
+                </ion-card-content>
+            </ion-card>
+            <ion-card ng-if="externalDependencies!==undefined" class="item-text-wrap">
+                <ion-card-header>
+                    {{"externalDependencies" | translate}}
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item ng-if="externalDependencies.length>0" ng-repeat="(group,mincount) in externalGroups">
+                        <div ng-repeat="strategy in externalDependencies | filter : { groupno : group } : true">
+                            <p ng-hide="!$last && $index==0">{{mincount}} {{"outOf" | translate}}</p>
+                            <ion-item>{{strategy.department}}: {{strategy.title}}</ion-item>
+                        </div>
+                    </ion-item>
+                    <ion-item ng-if="!externalDependencies.length>0">{{"noDependencies" | translate}}</ion-item>
+                </ion-card-content>
+            </ion-card>          -->
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar bar-dark">
+        <button class="button" ng-if="enableActions == 'true' && strategyCard.state == 'BOUGHT'" ng-click="implementCard()">{{"implement" | translate}}</button>
+        <button class="button" ng-if="enableActions == 'true' && strategyCard.state == 'BOUGHT'" ng-click="sellStrategy()">{{"sell" | translate}}</button>
+        <button class="button" ng-if="enableActions == 'true' && strategyCard.state == 'IMPLEMENTED'" ng-click="deplementCard()">{{"deplement" | translate}}</button>
+        <button class="button" ng-if="enableActions == 'true' && strategyCard.state == 'ACTIVE'" ng-click="deplementCard()">{{"deplement" | translate}}</button>
+        <button class="button" ng-if="enableActions == 'true' && strategyCard.state == 'NOT_ACTIVE'" ng-click="deplementCard()">{{"deplement" | translate}}</button>
+    </ion-footer-bar>
+</ion-view>

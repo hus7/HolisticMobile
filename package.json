@@ -1,0 +1,59 @@
+{
+    "name": "BigMotors",
+    "version": "0.0.1",
+    "description": "BigMotors",
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-add-swift-support": "~1.6.2",
+        "cordova-plugin-android-permissions": "^1.0.0",
+        "cordova-plugin-app-version": "^0.1.9",
+        "cordova-plugin-barcodescanner": "^0.7.4",
+        "cordova-plugin-compat": "~1.1.0",
+        "cordova-plugin-console": "~1.0.6",
+        "cordova-plugin-crosswalk-webview": "~2.3.0",
+        "cordova-plugin-device": "~1.1.4",
+        "cordova-plugin-google-analytics": "^1.8.3",
+        "cordova-plugin-network-information": "^2.0.1",
+        "cordova-plugin-statusbar": "~2.2.1",
+        "cordova-plugin-whitelist": "~1.3.1",
+        "cordova-plugin-zeroconf": "~1.2.2",
+        "gulp": "^3.5.6",
+        "gulp-concat": "^2.2.0",
+        "gulp-minify-css": "^0.3.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^2.0.4",
+        "ionic-plugin-keyboard": "~2.2.1"
+    },
+    "devDependencies": {
+        "bower": "^1.3.3",
+        "gulp-util": "^2.2.14",
+        "shelljs": "^0.3.0"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-add-swift-support": {},
+            "cordova-plugin-compat": {},
+            "cordova-plugin-console": {},
+            "cordova-plugin-crosswalk-webview": {
+                "XWALK_VERSION": "23+",
+                "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+                "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+                "XWALK_MODE": "embedded",
+                "XWALK_MULTIPLEAPK": "true"
+            },
+            "cordova-plugin-device": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-zeroconf": {},
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-google-analytics": {},
+            "cordova-plugin-android-permissions": {},
+            "cordova-plugin-barcodescanner": {},
+            "cordova-plugin-app-version": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}
